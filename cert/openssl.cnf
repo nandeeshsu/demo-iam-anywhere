@@ -11,11 +11,11 @@ countryName_min			= 2
 countryName_max			= 2
 stateOrProvinceName		= Penarth
 localityName			= Penarth
-0.organizationName		= Test
-organizationalUnitName		= Test
-commonName			= test@test.com
+0.organizationName		= Penarth
+organizationalUnitName		= Penarth
+commonName			= Common Name (eg, fully qualified host name)
 commonName_max			= 64
-emailAddress			= test@test.com
+emailAddress			= penarth@test.com
 emailAddress_max		= 64
 
 [ req_attributes ]
