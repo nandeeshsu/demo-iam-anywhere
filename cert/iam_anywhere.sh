@@ -1,5 +1,5 @@
 # Extract content  of CA certificate
-cert_value=`cat MyCA.pem`
+cert_value=`cat MyAWSCA.pem`
 
 # Create anywhere trust anchor using CA certificate
 trust_anchor_arn=$(aws rolesanywhere create-trust-anchor --enabled --name demo-trust-anchor --source "sourceData={x509CertificateData=$cert_value},sourceType=CERTIFICATE_BUNDLE" --query 'trustAnchor.trustAnchorArn' --output text)
@@ -22,8 +22,8 @@ sleep 20
 
 # Generate credentials
 credentials=$(./aws_signing_helper credential-process \
-    --certificate client.pem \
-    --private-key client.key \
+    --certificate onpremise.pem \
+    --private-key onpremise.key \
     --trust-anchor-arn $trust_anchor_arn \
     --profile-arn $profile_arn \
     --role-arn $role_arn)
